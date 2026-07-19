@@ -2,18 +2,24 @@
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector("#site-nav");
-  const year = document.querySelector("#year");
   const form = document.querySelector("#contact-form");
   const formNote = document.querySelector("#form-note");
 
-  if (year) year.textContent = String(new Date().getFullYear());
-
-  const onScroll = () => {
-    if (!header) return;
-    header.classList.toggle("is-scrolled", window.scrollY > 12);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  // Scroll state without reading layout in a scroll handler (avoids forced reflow)
+  if (header) {
+    const sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText =
+      "position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none;";
+    document.body.prepend(sentinel);
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(
+        ([entry]) =>
+          header.classList.toggle("is-scrolled", !entry.isIntersecting),
+        { threshold: 0, rootMargin: "-12px 0px 0px 0px" }
+      ).observe(sentinel);
+    }
+  }
 
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
@@ -31,7 +37,10 @@
     });
   }
 
-  const reveals = document.querySelectorAll(".reveal");
+  const revealEls = [...document.querySelectorAll(".reveal")].filter(
+    (el) => !el.closest(".hero")
+  );
+
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
@@ -44,15 +53,10 @@
       },
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
-    reveals.forEach((el) => io.observe(el));
+    revealEls.forEach((el) => io.observe(el));
   } else {
-    reveals.forEach((el) => el.classList.add("is-visible"));
+    revealEls.forEach((el) => el.classList.add("is-visible"));
   }
-
-  // Hero content should show immediately
-  document.querySelectorAll(".hero .reveal").forEach((el) => {
-    el.classList.add("is-visible");
-  });
 
   if (form) {
     form.addEventListener("submit", (event) => {
