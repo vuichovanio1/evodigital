@@ -84,6 +84,13 @@ textarea {
 
 .section {
   padding: clamp(4rem, 8vw, 7rem) 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
+.hero.section,
+.hero {
+  content-visibility: visible;
 }
 
 .section-head {
@@ -287,6 +294,9 @@ p {
   position: absolute;
   inset: 0;
   z-index: -1;
+  background:
+    radial-gradient(ellipse at 70% 20%, rgba(125, 91, 166, 0.45), transparent 55%),
+    linear-gradient(160deg, #1a1430, #0b0a12 70%);
 }
 
 .hero-media img {
