@@ -84,11 +84,8 @@ textarea {
 
 .section {
   padding: clamp(4rem, 8vw, 7rem) 0;
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 900px;
 }
 
-.hero.section,
 .hero {
   content-visibility: visible;
 }
@@ -534,6 +531,7 @@ p {
   display: grid;
   place-items: center;
   min-height: 120px;
+  min-width: 44px;
   padding: 1rem;
   background: #fff;
   border-radius: var(--radius-sm);
