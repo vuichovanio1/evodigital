@@ -36,7 +36,6 @@
   <meta name="twitter:image" content="https://www.evodigital.bg/assets/images/brand/og-image.jpg">
 
   <link rel="preload" href="assets/fonts/commissioner-400-800-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/images/hero/hero-social-marketing-800.webp" type="image/webp">
   <style>
     /* Self-hosted Commissioner — inlined to skip fonts.css request */
     @font-face{font-family:'Commissioner';font-style:normal;font-weight:400 800;font-display:swap;src:url("assets/fonts/commissioner-400-800-cyrillic-ext.woff2") format("woff2");unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
@@ -326,19 +325,22 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
         <picture>
+          <!-- Photo only from tablet up — mobile lab/SI stays on fast CSS hero -->
           <source
+            media="(min-width: 768px)"
             type="image/avif"
             srcset="assets/images/hero/hero-social-marketing.avif">
           <source
+            media="(min-width: 768px)"
             type="image/webp"
             srcset="assets/images/hero/hero-social-marketing-800.webp 800w, assets/images/hero/hero-social-marketing.webp 1050w"
             sizes="100vw">
           <img
-            src="assets/images/hero/hero-social-marketing-800.webp"
+            class="hero-photo"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 1067'%3E%3C/svg%3E"
             alt=""
             width="800"
             height="1067"
-            fetchpriority="high"
             decoding="async">
         </picture>
         <div class="hero-scrim"></div>
