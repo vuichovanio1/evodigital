@@ -1,0 +1,66 @@
+{
+  "brand": [
+    "logo-evodigital-alt.jpg",
+    "logo-evodigital.avif",
+    "logo-evodigital.png",
+    "logo-evodigital.webp"
+  ],
+  "team": [
+    "dimitar-ceo.avif",
+    "dimitar-ceo.png",
+    "dimitar-ceo.webp",
+    "kami-ppc.avif",
+    "kami-ppc.png",
+    "kami-ppc.webp",
+    "tanya-designer.avif",
+    "tanya-designer.png",
+    "tanya-designer.webp"
+  ],
+  "services": [
+    "service-360.avif",
+    "service-360.jpg",
+    "service-consult.avif",
+    "service-consult.jpg",
+    "service-google-ads.avif",
+    "service-google-ads.jpg",
+    "service-social-ads.avif",
+    "service-social-ads.jpg",
+    "service-social-manage.avif",
+    "service-social-manage.jpg"
+  ],
+  "clients": [
+    "aristocrat-hills.png",
+    "asansiori.png",
+    "casamia.png",
+    "catro.jpg",
+    "contour-podcast.jpg",
+    "den-design.png",
+    "den-design.webp",
+    "devorex.jpg",
+    "devorex.webp",
+    "ekabo.jpg",
+    "gd-construction.png",
+    "high-level-construction.png",
+    "infinity-capital-white.png",
+    "infinity-capital.png",
+    "kcs-construction.png",
+    "solaris.png",
+    "teiami.png",
+    "teiami.webp",
+    "terra-estetica.png",
+    "zagatto.jpg"
+  ],
+  "hero": [
+    "hero-social-marketing.avif",
+    "hero-social-marketing.jpg",
+    "hero-social-marketing.webp",
+    "illustration-marketing.avif",
+    "illustration-marketing.jpg",
+    "illustration-marketing.webp"
+  ],
+  "ui": [
+    "icon-facebook.png",
+    "icon-instagram.png",
+    "icon-linkedin.png"
+  ]
+}

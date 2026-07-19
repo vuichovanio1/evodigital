@@ -1,0 +1,23 @@
+# Source dumps & lab noise
+old.txt
+psi-*.json
+image-urls.txt
+image-ids.txt
+preview/
+
+# Duplicate / unused source images at repo root
+/images/
+
+# Heavy originals (WebP/AVIF used in production)
+site/assets/images/team/*.png
+site/assets/images/hero/*.jpg
+site/assets/images/clients/*.png
+site/assets/images/clients/*.jpg
+site/assets/images/_source/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
