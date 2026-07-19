@@ -80,4 +80,24 @@
       window.location.href = mailto;
     });
   }
+
+  // Defer brand font until after LCP so hero image owns the network
+  const loadFonts = () => {
+    if (document.getElementById("fonts-css")) return;
+    const link = document.createElement("link");
+    link.id = "fonts-css";
+    link.rel = "stylesheet";
+    link.href = "css/fonts.css";
+    link.onload = () => document.documentElement.classList.add("fonts-ready");
+    document.head.appendChild(link);
+  };
+  const scheduleFonts = () => {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(loadFonts, { timeout: 4000 });
+    } else {
+      setTimeout(loadFonts, 2000);
+    }
+  };
+  if (document.readyState === "complete") scheduleFonts();
+  else window.addEventListener("load", scheduleFonts, { once: true });
 })();

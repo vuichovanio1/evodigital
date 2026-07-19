@@ -35,13 +35,6 @@
   <meta name="twitter:description" content="EVO-Digital е дигитална маркетинг агенция за съдържание, реклама, Google Ads, SEO и стратегия.">
   <meta name="twitter:image" content="https://www.evodigital.bg/assets/images/brand/og-image.jpg">
 
-  <style>
-    /* Self-hosted Commissioner — inlined to skip fonts.css request */
-    @font-face{font-family:'Commissioner';font-style:normal;font-weight:400 800;font-display:optional;src:url("assets/fonts/commissioner-400-800-cyrillic-ext.woff2") format("woff2");unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-    @font-face{font-family:'Commissioner';font-style:normal;font-weight:400 800;font-display:optional;src:url("assets/fonts/commissioner-400-800-cyrillic.woff2") format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-    @font-face{font-family:'Commissioner';font-style:normal;font-weight:400 800;font-display:optional;src:url("assets/fonts/commissioner-400-800-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-    @font-face{font-family:'Commissioner';font-style:normal;font-weight:400 800;font-display:optional;src:url("assets/fonts/commissioner-400-800-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-  </style>
   <style id="critical">
     :root{--bg:#0b0a12;--text:#f5f4f8;--text-muted:rgba(245,244,248,.72);--teal:#35c3ba;--purple:#7d5ba6;--line:rgba(255,255,255,.12);--container:min(1120px,calc(100% - 2.5rem));--font:system-ui,sans-serif;--header-h:4.5rem;--ease:cubic-bezier(.22,1,.36,1)}
     *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -56,9 +49,9 @@
     .btn-ghost{border-color:rgba(255,255,255,.28);color:var(--text);background:rgba(255,255,255,.04)}
     .nav-toggle{display:none}
     .hero{position:relative;min-height:min(92vh,880px);display:grid;align-items:end;overflow:hidden;isolation:isolate}
-    .hero-media{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 70% 20%,rgba(125,91,166,.45),transparent 55%),linear-gradient(160deg,#1a1430,#0b0a12 70%)}
+    .hero-media{position:absolute;inset:0;z-index:-1;background-color:#1a1430;background-image:radial-gradient(ellipse at 70% 20%,rgba(125,91,166,.45),transparent 55%),url("data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAADwBACdASoYACAAPwFssFArJiUisAwBYCAJQBndhDv4P46SRUkdGSGpecMnYaIPbAAA/tMHauTGLJDxaMaat64H5CHhwDvXBOqwy+Sa3W1WBZIovg2PP/uxZoe35Pum5sAQYvNYAmSoY1uBLhHqsK0xWD179K7Tc7WDFBuojeGDE6a5TEf3Yeyp7ydoHWyXFBIn5GZFC0zmUNgweZNV5RlMAhAKIAAA"),linear-gradient(160deg,#1a1430,#0b0a12 70%);background-size:auto,cover,auto;background-position:center,center 20%,center}
     .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-    .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,18,.35),rgba(11,10,18,.55) 40%,rgba(11,10,18,.92))}
+    .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,18,.4),rgba(11,10,18,.58) 40%,rgba(11,10,18,.94))}
     .hero-content{padding:7rem 0 4.5rem}
     .brand-mark{margin:0 0 1rem;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;letter-spacing:.12em;background:linear-gradient(90deg,#c4a5ef,var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
     h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;max-width:14ch;line-height:1.15;margin:0;letter-spacing:-.02em}
@@ -68,13 +61,20 @@
     @media(max-width:960px){.nav{display:none}.nav-toggle{display:grid;width:2.6rem;height:2.6rem;border:1px solid var(--line);border-radius:50%;background:0 0;place-items:center}}
     @media(max-width:640px){.header-actions .btn{display:none}}
   </style>
-  <!-- LCP hero: tiny AVIF/WebP, responsive — gradient paints first -->
+  <!-- LCP hero — mobile gets 720 AVIF (~15KB); desktop 1080 -->
   <link
     rel="preload"
     as="image"
     type="image/avif"
-    imagesrcset="assets/images/hero/hero-social-marketing-480.avif 480w, assets/images/hero/hero-social-marketing-720.avif 720w, assets/images/hero/hero-social-marketing-1080.avif 1080w"
-    imagesizes="100vw"
+    href="assets/images/hero/hero-social-marketing-720.avif"
+    media="(max-width: 767px)"
+    fetchpriority="high">
+  <link
+    rel="preload"
+    as="image"
+    type="image/avif"
+    href="assets/images/hero/hero-social-marketing-1080.avif"
+    media="(min-width: 768px)"
     fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -115,19 +115,29 @@
       <div class="hero-media" aria-hidden="true">
         <picture>
           <source
+            media="(max-width: 767px)"
             type="image/avif"
-            srcset="assets/images/hero/hero-social-marketing-480.avif 480w, assets/images/hero/hero-social-marketing-720.avif 720w, assets/images/hero/hero-social-marketing-1080.avif 1080w"
+            srcset="assets/images/hero/hero-social-marketing-480.avif 1x, assets/images/hero/hero-social-marketing-720.avif 2x">
+          <source
+            media="(max-width: 767px)"
+            type="image/webp"
+            srcset="assets/images/hero/hero-social-marketing-480.webp 1x, assets/images/hero/hero-social-marketing-720.webp 2x">
+          <source
+            media="(min-width: 768px)"
+            type="image/avif"
+            srcset="assets/images/hero/hero-social-marketing-720.avif 720w, assets/images/hero/hero-social-marketing-1080.avif 1080w"
             sizes="100vw">
           <source
+            media="(min-width: 768px)"
             type="image/webp"
-            srcset="assets/images/hero/hero-social-marketing-480.webp 480w, assets/images/hero/hero-social-marketing-720.webp 720w, assets/images/hero/hero-social-marketing-1080.webp 1080w"
+            srcset="assets/images/hero/hero-social-marketing-720.webp 720w, assets/images/hero/hero-social-marketing-1080.webp 1080w"
             sizes="100vw">
           <img
             class="hero-photo"
-            src="assets/images/hero/hero-social-marketing-480.webp"
+            src="assets/images/hero/hero-social-marketing-720.webp"
             alt=""
-            width="480"
-            height="640"
+            width="720"
+            height="960"
             fetchpriority="high"
             decoding="async">
         </picture>

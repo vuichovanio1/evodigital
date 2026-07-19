@@ -19,7 +19,7 @@
   --radius-sm: 12px;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
   --container: min(1120px, calc(100% - 2.5rem));
-  --font: "Commissioner", system-ui, sans-serif;
+  --font: system-ui, "Segoe UI", sans-serif;
   --header-h: 4.5rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -32,6 +32,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+html.fonts-ready {
+  --font: "Commissioner", system-ui, "Segoe UI", sans-serif;
 }
 
 body {
@@ -291,9 +295,13 @@ p {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
+  background-color: #1a1430;
+  background-image:
     radial-gradient(ellipse at 70% 20%, rgba(125, 91, 166, 0.45), transparent 55%),
+    url("data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAADwBACdASoYACAAPwFssFArJiUisAwBYCAJQBndhDv4P46SRUkdGSGpecMnYaIPbAAA/tMHauTGLJDxaMaat64H5CHhwDvXBOqwy+Sa3W1WBZIovg2PP/uxZoe35Pum5sAQYvNYAmSoY1uBLhHqsK0xWD179K7Tc7WDFBuojeGDE6a5TEf3Yeyp7ydoHWyXFBIn5GZFC0zmUNgweZNV5RlMAhAKIAAA"),
     linear-gradient(160deg, #1a1430, #0b0a12 70%);
+  background-size: auto, cover, auto;
+  background-position: center, center 20%, center;
 }
 
 .hero-media img {
