@@ -1,6 +1,7 @@
 # Source dumps & lab noise
 old.txt
 psi-*.json
+bp-lighthouse.json
 image-urls.txt
 image-ids.txt
 preview/
