@@ -303,12 +303,6 @@ p {
   object-position: center 20%;
 }
 
-@media (max-width: 767px) {
-  .hero-photo {
-    display: none;
-  }
-}
-
 .hero-scrim {
   position: absolute;
   inset: 0;

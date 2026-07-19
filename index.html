@@ -57,6 +57,7 @@
     .nav-toggle{display:none}
     .hero{position:relative;min-height:min(92vh,880px);display:grid;align-items:end;overflow:hidden;isolation:isolate}
     .hero-media{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 70% 20%,rgba(125,91,166,.45),transparent 55%),linear-gradient(160deg,#1a1430,#0b0a12 70%)}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
     .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,18,.35),rgba(11,10,18,.55) 40%,rgba(11,10,18,.92))}
     .hero-content{padding:7rem 0 4.5rem}
     .brand-mark{margin:0 0 1rem;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;letter-spacing:.12em;background:linear-gradient(90deg,#c4a5ef,var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -67,6 +68,14 @@
     @media(max-width:960px){.nav{display:none}.nav-toggle{display:grid;width:2.6rem;height:2.6rem;border:1px solid var(--line);border-radius:50%;background:0 0;place-items:center}}
     @media(max-width:640px){.header-actions .btn{display:none}}
   </style>
+  <!-- LCP hero: tiny AVIF/WebP, responsive — gradient paints first -->
+  <link
+    rel="preload"
+    as="image"
+    type="image/avif"
+    imagesrcset="assets/images/hero/hero-social-marketing-480.avif 480w, assets/images/hero/hero-social-marketing-720.avif 720w, assets/images/hero/hero-social-marketing-1080.avif 1080w"
+    imagesizes="100vw"
+    fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -105,22 +114,21 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
         <picture>
-          <!-- Photo only from tablet up — mobile lab/SI stays on fast CSS hero -->
           <source
-            media="(min-width: 768px)"
             type="image/avif"
-            srcset="assets/images/hero/hero-social-marketing.avif">
+            srcset="assets/images/hero/hero-social-marketing-480.avif 480w, assets/images/hero/hero-social-marketing-720.avif 720w, assets/images/hero/hero-social-marketing-1080.avif 1080w"
+            sizes="100vw">
           <source
-            media="(min-width: 768px)"
             type="image/webp"
-            srcset="assets/images/hero/hero-social-marketing-800.webp 800w, assets/images/hero/hero-social-marketing.webp 1050w"
+            srcset="assets/images/hero/hero-social-marketing-480.webp 480w, assets/images/hero/hero-social-marketing-720.webp 720w, assets/images/hero/hero-social-marketing-1080.webp 1080w"
             sizes="100vw">
           <img
             class="hero-photo"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 1067'%3E%3C/svg%3E"
+            src="assets/images/hero/hero-social-marketing-480.webp"
             alt=""
-            width="800"
-            height="1067"
+            width="480"
+            height="640"
+            fetchpriority="high"
             decoding="async">
         </picture>
         <div class="hero-scrim"></div>
