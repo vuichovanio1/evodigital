@@ -9,11 +9,11 @@ preview/
 /images/
 
 # Heavy originals (WebP/AVIF used in production)
-site/assets/images/team/*.png
-site/assets/images/hero/*.jpg
-site/assets/images/clients/*.png
-site/assets/images/clients/*.jpg
-site/assets/images/_source/
+assets/images/team/*.png
+assets/images/hero/*.jpg
+assets/images/clients/*.png
+assets/images/clients/*.jpg
+assets/images/_source/
 
 # OS / editor
 .DS_Store

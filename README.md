@@ -2,6 +2,8 @@
 
 Чист HTML/CSS/JS вариант на [evodigital.bg](https://www.evodigital.bg), със същия бранд, съдържание и връзки — без Wix.
 
+**Live demo:** [vuichovanio1.github.io/evodigital](https://vuichovanio1.github.io/evodigital/)
+
 ## Before / After (PageSpeed mobile)
 
 | | **Преди (Wix live)** | **След (този билд)** |
@@ -14,14 +16,15 @@
 | LCP (lab) | ~13.8 s | очаквано < 2.5 s |
 | TBT (lab) | ~1.2 s | очаквано < 200 ms |
 
-> Lab резултатите варират. Сравни сам: [PageSpeed Insights](https://pagespeed.web.dev/) — live URL vs. този билд на хостинг.
+Сравни сам в [PageSpeed Insights](https://pagespeed.web.dev/):
+1. `https://www.evodigital.bg`
+2. `https://vuichovanio1.github.io/evodigital/`
 
-## Как да го видиш
+## Локално
 
-Отвори `site/index.html` локално, или:
+Отвори `index.html` или:
 
 ```bash
-cd site
 npx --yes serve .
 ```
 
@@ -33,17 +36,6 @@ npx --yes serve .
 - JSON-LD: Organization, knowsAbout, Services, Person, Review, FAQPage
 - Локални шрифтове (Commissioner), WebP/AVIF ассети
 
-## Структура
-
-```
-site/
-  index.html
-  css/
-  js/
-  assets/images/
-  assets/fonts/
-```
-
 ## Бележка
 
-Това е performance demo / алтернативна имплементация. Оригиналният live сайт е на Wix.
+Performance demo / алтернативна имплементация. Оригиналният live сайт е на Wix.
